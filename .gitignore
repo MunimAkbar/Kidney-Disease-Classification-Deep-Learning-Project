@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+.Python
+env/
+venv/
+.venv/
+build/
+develop-eggs/
+dist/
+eggs/
+*.egg-info
+.installed.txt
+*.egg
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store # macOS specific
+
+# Machine Learning specific
+# Data
+data/raw/ # If you download raw data into this folder
+data/processed/ # If you process data into this folder
+*.csv # If intermediate CSVs are generated and shouldn't be tracked
+*.tsv
+*.xlsx
+*.json
+
+# Models
+*.pkl
+*.joblib
+*.h5
+*.pth
+*.pt
+*.onnx
+*.tf
+models/ # A common directory for saved models
+
+# Logs and outputs
+logs/
+*.log
+output/
+results/
+reports/
+
+# Environment variables
+.env
+
+research/kidney-CT-Scan-data.zip
