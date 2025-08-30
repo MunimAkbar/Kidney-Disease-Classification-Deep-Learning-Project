@@ -1,2 +1,70 @@
 [2025-08-14 11:37:30,353: INFO: main: Welcome to the logger]
 [2025-08-14 11:38:30,747: INFO: main: Welcome to the logger]
+[2025-08-30 14:42:57,467: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-08-30 14:42:57,469: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-08-30 14:42:57,469: INFO: common: created directory at: artifacts]
+[2025-08-30 14:42:57,475: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-08-30 14:42:57,477: INFO: 986331348: Downloading data from https://drive.google.com/file/d/1oxYFzoUyP3B6wx11zO1Ou9UEiNIZasM7/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-08-30 14:44:23,944: INFO: 986331348: Downloaded data from https://drive.google.com/file/d/1oxYFzoUyP3B6wx11zO1Ou9UEiNIZasM7/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-08-30 15:17:03,891: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-08-30 15:17:03,892: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-08-30 15:17:03,893: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-08-30 15:17:03,894: INFO: common: created directory at: artifacts]
+[2025-08-30 15:17:03,894: ERROR: main: 'ConfigurationManager' object has no attribute 'get_data_ingestion_config']
+Traceback (most recent call last):
+  File "D:\WorkANDProjects\Kidney-Disease-Classification-Deep-Learning-Project\main.py", line 9, in <module>
+    data_ingestion.main()
+  File "D:\WorkANDProjects\Kidney-Disease-Classification-Deep-Learning-Project\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 13, in main
+    data_ingestion_config = config.get_data_ingestion_config()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigurationManager' object has no attribute 'get_data_ingestion_config'
+[2025-08-30 15:18:49,813: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-08-30 15:18:49,813: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-08-30 15:18:49,813: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-08-30 15:18:49,813: INFO: common: created directory at: artifacts]
+[2025-08-30 15:18:49,827: ERROR: main: 'ConfigurationManager' object has no attribute 'get_data_ingestion_config']
+Traceback (most recent call last):
+  File "D:\WorkANDProjects\Kidney-Disease-Classification-Deep-Learning-Project\main.py", line 9, in <module>
+    data_ingestion.main()
+  File "D:\WorkANDProjects\Kidney-Disease-Classification-Deep-Learning-Project\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 13, in main
+    data_ingestion_config = config.get_data_ingestion_config()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigurationManager' object has no attribute 'get_data_ingestion_config'
+[2025-08-30 15:23:34,105: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-08-30 15:23:34,105: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-08-30 15:23:34,105: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-08-30 15:23:34,105: INFO: common: created directory at: artifacts]
+[2025-08-30 15:23:34,105: ERROR: main: 'ConfigurationManager' object has no attribute 'get_data_ingestion_config']
+Traceback (most recent call last):
+  File "D:\WorkANDProjects\Kidney-Disease-Classification-Deep-Learning-Project\main.py", line 9, in <module>
+    data_ingestion.main()
+  File "D:\WorkANDProjects\Kidney-Disease-Classification-Deep-Learning-Project\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 13, in main
+    data_ingestion_config = config.get_data_ingestion_config()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigurationManager' object has no attribute 'get_data_ingestion_config'
+[2025-08-30 15:28:43,473: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-08-30 15:28:43,473: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-08-30 15:28:43,473: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-08-30 15:28:43,473: INFO: common: created directory at: artifacts]
+[2025-08-30 15:28:43,473: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-08-30 15:28:43,473: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1oxYFzoUyP3B6wx11zO1Ou9UEiNIZasM7/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-08-30 15:30:10,596: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1oxYFzoUyP3B6wx11zO1Ou9UEiNIZasM7/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-08-30 15:30:20,149: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2025-08-30 15:39:59,035: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-08-30 15:39:59,035: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-08-30 15:39:59,035: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-08-30 15:39:59,035: INFO: common: created directory at: artifacts]
+[2025-08-30 15:39:59,035: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-08-30 15:39:59,035: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1oxYFzoUyP3B6wx11zO1Ou9UEiNIZasM7/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-08-30 15:40:44,467: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-08-30 15:40:44,467: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2025-08-30 15:40:44,467: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-08-30 15:40:44,467: INFO: common: created directory at: artifacts]
+[2025-08-30 15:40:44,467: INFO: common: created directory at: artifacts/data_ingestion]
+[2025-08-30 15:40:44,467: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1oxYFzoUyP3B6wx11zO1Ou9UEiNIZasM7/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-08-30 15:42:10,955: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1oxYFzoUyP3B6wx11zO1Ou9UEiNIZasM7/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-08-30 15:42:19,906: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
