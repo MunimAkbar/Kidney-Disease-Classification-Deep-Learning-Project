@@ -22,24 +22,36 @@ Clone the repository
 ```bash
 https://github.com/MunimAkbar/Kidney-Disease-Classification-Deep-Learning-Project
 ```
-### STEP 01- Create a conda environment after opening the repository
-
+### STEP 01- Create a conda environment for GPU Training
 ```bash
-conda create -n cnncls python=3.8 -y
-```
+# Create a new environment with Python 3.10
+conda create -p env python=3.10 -y
 
-```bash
-conda activate cnncls
-```
+# Activate the environment
+conda activate ./env
 
+# Install CUDA Toolkit and cuDNN compatible with TF 2.10
+conda install -c conda-forge cudatoolkit=11.2 cudnn=8.1.0 -y
+```
 
 ### STEP 02- install the requirements
 ```bash
+# Install GPU-enabled TensorFlow
+pip install tensorflow-gpu==2.10.0
+
+# Install remaining dependencies
 pip install -r requirements.txt
 ```
 
+### STEP 03- Running Training
 ```bash
-# Finally run the following command
+# Run the training pipeline
+python main.py
+```
+
+### STEP 04- Running the Application
+```bash
+# Finally run the flask app
 python app.py
 ```
 
