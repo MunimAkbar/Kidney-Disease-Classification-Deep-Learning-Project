@@ -816,3 +816,53 @@ Traceback (most recent call last):
     raise IOError(
 OSError: No file or directory found at model\model.h5
 [2025-12-05 17:58:51,263: INFO: _internal: 192.168.0.225 - - [05/Dec/2025 17:58:51] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2026-03-11 16:57:09,973: INFO: tokens: Removed expired tokens from the token cache]
+[2026-03-11 16:58:29,927: INFO: _client: HTTP Request: POST https://dagshub.com/login/oauth/middleman "HTTP/1.1 200 OK"]
+[2026-03-11 16:58:31,068: INFO: _client: HTTP Request: POST https://dagshub.com/login/oauth/access_token "HTTP/1.1 200 OK"]
+[2026-03-11 16:58:32,224: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-03-11 16:58:32,224: INFO: helpers: Accessing as MunimAkbar]
+[2026-03-11 16:58:33,471: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/MunimAkbar/Kidney-Disease-Classification-Deep-Learning-Project "HTTP/1.1 200 OK"]
+[2026-03-11 16:58:34,628: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-03-11 16:58:34,628: INFO: helpers: Initialized MLflow to track repo "MunimAkbar/Kidney-Disease-Classification-Deep-Learning-Project"]
+[2026-03-11 16:58:34,632: INFO: helpers: Repository MunimAkbar/Kidney-Disease-Classification-Deep-Learning-Project initialized!]
+[2026-03-11 16:58:34,682: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2026-03-11 16:58:34,685: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-11 16:58:34,688: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-11 16:58:34,688: INFO: common: created directory at: artifacts]
+[2026-03-11 16:58:34,688: INFO: common: created directory at: artifacts/data_ingestion]
+[2026-03-11 16:58:34,688: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1GJ1AWi35oa6i6tN7wtfHXvBnQ6j5mvZv/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2026-03-11 17:00:15,842: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1GJ1AWi35oa6i6tN7wtfHXvBnQ6j5mvZv/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2026-03-11 17:00:17,044: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2026-03-11 17:00:17,044: INFO: main: *******************]
+[2026-03-11 17:00:17,044: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2026-03-11 17:00:17,047: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-11 17:00:17,048: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-11 17:00:17,048: INFO: common: created directory at: artifacts]
+[2026-03-11 17:00:17,048: INFO: common: created directory at: artifacts/prepare_base_model]
+[2026-03-11 17:00:18,301: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-03-11 17:00:18,610: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2026-03-11 17:00:18,610: INFO: main: *******************]
+[2026-03-11 17:00:18,610: INFO: main: >>>>>> stage Training started <<<<<<]
+[2026-03-11 17:00:18,610: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-11 17:00:18,610: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-11 17:00:18,610: INFO: common: created directory at: artifacts]
+[2026-03-11 17:00:18,610: INFO: common: created directory at: artifacts\training]
+[2026-03-11 17:04:46,848: INFO: main: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2026-03-11 17:04:46,848: INFO: main: *******************]
+[2026-03-11 17:04:46,848: INFO: main: >>>>>> stage Evaluation stage started <<<<<<]
+[2026-03-11 17:04:46,848: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-11 17:04:46,848: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-11 17:04:46,855: INFO: common: created directory at: artifacts]
+[2026-03-11 17:04:54,846: INFO: common: json file saved at: scores.json]
+[2026-03-11 17:04:54,846: INFO: common: json file saved at: scores.json]
+[2026-03-11 17:04:58,546: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 13). These functions will not be directly callable after loading.]
+[2026-03-11 17:04:59,299: INFO: builder_impl: Assets written to: C:\Users\pc\AppData\Local\Temp\tmpppa5xyrs\model\data\model\assets]
+[2026-03-11 17:07:56,069: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
