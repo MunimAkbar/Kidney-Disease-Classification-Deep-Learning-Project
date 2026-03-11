@@ -80,12 +80,6 @@ class Training:
                 monitor='val_accuracy',
                 verbose=1
             ),
-            tf.keras.callbacks.EarlyStopping(
-                monitor='val_loss',
-                patience=5,
-                restore_best_weights=True,
-                verbose=1
-            ),
             tf.keras.callbacks.ReduceLROnPlateau(
                 monitor='val_loss',
                 factor=0.2,

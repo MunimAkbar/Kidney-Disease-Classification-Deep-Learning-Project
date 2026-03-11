@@ -960,3 +960,104 @@ x==========x]
 [2026-03-11 19:32:04,460: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
 
 x==========x]
+[2026-03-11 19:41:34,415: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-03-11 19:41:34,510: INFO: helpers: Accessing as MunimAkbar]
+[2026-03-11 19:41:35,628: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/MunimAkbar/Kidney-Disease-Classification-Deep-Learning-Project "HTTP/1.1 200 OK"]
+[2026-03-11 19:41:36,370: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-03-11 19:41:36,373: INFO: helpers: Initialized MLflow to track repo "MunimAkbar/Kidney-Disease-Classification-Deep-Learning-Project"]
+[2026-03-11 19:41:36,374: INFO: helpers: Repository MunimAkbar/Kidney-Disease-Classification-Deep-Learning-Project initialized!]
+[2026-03-11 19:41:36,437: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2026-03-11 19:41:36,442: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-11 19:41:36,442: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-11 19:41:36,444: INFO: common: created directory at: artifacts]
+[2026-03-11 19:41:36,444: INFO: common: created directory at: artifacts/data_ingestion]
+[2026-03-11 19:41:36,444: ERROR: main: name 'Path' is not defined]
+Traceback (most recent call last):
+  File "D:\WorkANDProjects\Kidney-Disease-Classification-Deep-Learning-Project\main.py", line 17, in <module>
+    data_ingestion.main()
+  File "D:\WorkANDProjects\Kidney-Disease-Classification-Deep-Learning-Project\src\cnnClassifier\pipeline\stage_01_data_ingestion.py", line 15, in main
+    data_ingestion.download_file()
+  File "D:\WorkANDProjects\Kidney-Disease-Classification-Deep-Learning-Project\src\cnnClassifier\components\data_ingestion.py", line 33, in download_file
+    raise e
+  File "D:\WorkANDProjects\Kidney-Disease-Classification-Deep-Learning-Project\src\cnnClassifier\components\data_ingestion.py", line 30, in download_file
+    logger.info(f"File already exists of size: {get_size(Path(zip_download_dir))}")
+NameError: name 'Path' is not defined
+[2026-03-11 19:42:52,634: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-03-11 19:42:52,733: INFO: helpers: Accessing as MunimAkbar]
+[2026-03-11 19:42:53,900: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/MunimAkbar/Kidney-Disease-Classification-Deep-Learning-Project "HTTP/1.1 200 OK"]
+[2026-03-11 19:42:55,048: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-03-11 19:42:55,050: INFO: helpers: Initialized MLflow to track repo "MunimAkbar/Kidney-Disease-Classification-Deep-Learning-Project"]
+[2026-03-11 19:42:55,051: INFO: helpers: Repository MunimAkbar/Kidney-Disease-Classification-Deep-Learning-Project initialized!]
+[2026-03-11 19:42:55,123: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2026-03-11 19:42:55,126: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-11 19:42:55,128: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-11 19:42:55,128: INFO: common: created directory at: artifacts]
+[2026-03-11 19:42:55,129: INFO: common: created directory at: artifacts/data_ingestion]
+[2026-03-11 19:42:55,130: INFO: data_ingestion: File already exists of size: ~ 116777 KB]
+[2026-03-11 19:42:55,130: INFO: data_ingestion: Data already extracted at artifacts/data_ingestion\kidney-ct-scan-image]
+[2026-03-11 19:42:55,131: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2026-03-11 19:42:55,131: INFO: main: *******************]
+[2026-03-11 19:42:55,131: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2026-03-11 19:42:55,135: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-11 19:42:55,137: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-11 19:42:55,137: INFO: common: created directory at: artifacts]
+[2026-03-11 19:42:55,138: INFO: common: created directory at: artifacts/prepare_base_model]
+[2026-03-11 19:42:56,118: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-03-11 19:42:56,374: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2026-03-11 19:42:56,377: INFO: main: *******************]
+[2026-03-11 19:42:56,377: INFO: main: >>>>>> stage Training started <<<<<<]
+[2026-03-11 19:42:56,380: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-11 19:42:56,380: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-11 19:42:56,382: INFO: common: created directory at: artifacts]
+[2026-03-11 19:42:56,383: INFO: common: created directory at: artifacts\training]
+[2026-03-11 19:43:33,524: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-03-11 19:43:33,624: INFO: helpers: Accessing as MunimAkbar]
+[2026-03-11 19:43:34,759: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/MunimAkbar/Kidney-Disease-Classification-Deep-Learning-Project "HTTP/1.1 200 OK"]
+[2026-03-11 19:43:35,858: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-03-11 19:43:35,858: INFO: helpers: Initialized MLflow to track repo "MunimAkbar/Kidney-Disease-Classification-Deep-Learning-Project"]
+[2026-03-11 19:43:35,858: INFO: helpers: Repository MunimAkbar/Kidney-Disease-Classification-Deep-Learning-Project initialized!]
+[2026-03-11 19:43:35,923: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2026-03-11 19:43:35,923: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-11 19:43:35,923: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-11 19:43:35,931: INFO: common: created directory at: artifacts]
+[2026-03-11 19:43:35,931: INFO: common: created directory at: artifacts/data_ingestion]
+[2026-03-11 19:43:35,931: INFO: data_ingestion: File already exists of size: ~ 116777 KB]
+[2026-03-11 19:43:35,932: INFO: data_ingestion: Data already extracted at artifacts/data_ingestion\kidney-ct-scan-image]
+[2026-03-11 19:43:35,932: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2026-03-11 19:43:35,932: INFO: main: *******************]
+[2026-03-11 19:43:35,933: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2026-03-11 19:43:35,935: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-11 19:43:35,937: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-11 19:43:35,937: INFO: common: created directory at: artifacts]
+[2026-03-11 19:43:35,937: INFO: common: created directory at: artifacts/prepare_base_model]
+[2026-03-11 19:43:36,959: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-03-11 19:43:37,216: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2026-03-11 19:43:37,218: INFO: main: *******************]
+[2026-03-11 19:43:37,218: INFO: main: >>>>>> stage Training started <<<<<<]
+[2026-03-11 19:43:37,218: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-11 19:43:37,218: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-11 19:43:37,218: INFO: common: created directory at: artifacts]
+[2026-03-11 19:43:37,218: INFO: common: created directory at: artifacts\training]
+[2026-03-11 19:53:49,534: INFO: main: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2026-03-11 19:53:49,534: INFO: main: *******************]
+[2026-03-11 19:53:49,534: INFO: main: >>>>>> stage Evaluation stage started <<<<<<]
+[2026-03-11 19:53:49,550: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-11 19:53:49,550: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-11 19:53:49,550: INFO: common: created directory at: artifacts]
+[2026-03-11 19:53:57,497: INFO: common: json file saved at: scores.json]
+[2026-03-11 19:53:57,497: INFO: common: json file saved at: scores.json]
+[2026-03-11 19:54:01,099: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 13). These functions will not be directly callable after loading.]
+[2026-03-11 19:54:01,789: INFO: builder_impl: Assets written to: C:\Users\pc\AppData\Local\Temp\tmpa956oqz7\model\data\model\assets]
+[2026-03-11 19:56:48,742: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
