@@ -1061,3 +1061,137 @@ x==========x]
 [2026-03-11 19:56:48,742: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
 
 x==========x]
+[2026-03-12 16:36:57,783: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion Stage started <<<<<<]
+[2026-03-12 16:36:57,785: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-12 16:36:57,788: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-12 16:36:57,789: INFO: common: created directory at: artifacts]
+[2026-03-12 16:36:57,789: INFO: common: created directory at: artifacts/data_ingestion]
+[2026-03-12 16:36:57,790: INFO: data_ingestion: File already exists of size: ~ 116777 KB]
+[2026-03-12 16:36:57,790: INFO: data_ingestion: Extracting artifacts/data_ingestion/data.zip to artifacts/data_ingestion]
+[2026-03-12 16:36:58,693: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion Stage completed <<<<<<
+
+x==========x]
+[2026-03-12 16:37:20,565: INFO: stage_02_prepare_base_model: *******************]
+[2026-03-12 16:37:20,567: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model started <<<<<<]
+[2026-03-12 16:37:20,569: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-12 16:37:20,570: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-12 16:37:20,571: INFO: common: created directory at: artifacts]
+[2026-03-12 16:37:20,571: INFO: common: created directory at: artifacts/prepare_base_model]
+[2026-03-12 16:37:24,065: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2026-03-12 16:37:24,337: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2026-03-12 16:37:30,053: INFO: stage_03_model_training: *******************]
+[2026-03-12 16:37:30,053: INFO: stage_03_model_training: >>>>>> stage Training started <<<<<<]
+[2026-03-12 16:37:30,056: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-12 16:37:30,058: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-12 16:37:30,058: INFO: common: created directory at: artifacts]
+[2026-03-12 16:37:30,058: INFO: common: created directory at: artifacts\training]
+[2026-03-12 16:48:11,821: INFO: stage_03_model_training: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2026-03-12 16:48:24,975: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-03-12 16:48:24,981: INFO: helpers: Accessing as MunimAkbar]
+[2026-03-12 16:48:26,160: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/repos/MunimAkbar/Kidney-Disease-Classification-Deep-Learning-Project "HTTP/1.1 200 OK"]
+[2026-03-12 16:48:27,298: INFO: _client: HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"]
+[2026-03-12 16:48:27,299: INFO: helpers: Initialized MLflow to track repo "MunimAkbar/Kidney-Disease-Classification-Deep-Learning-Project"]
+[2026-03-12 16:48:27,302: INFO: helpers: Repository MunimAkbar/Kidney-Disease-Classification-Deep-Learning-Project initialized!]
+[2026-03-12 16:48:27,302: INFO: stage_04_model_evaluation: *******************]
+[2026-03-12 16:48:27,303: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage started <<<<<<]
+[2026-03-12 16:48:27,305: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-12 16:48:27,307: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-12 16:48:27,307: INFO: common: created directory at: artifacts]
+[2026-03-12 16:48:47,121: INFO: common: json file saved at: scores.json]
+[2026-03-12 16:48:47,121: INFO: common: json file saved at: scores.json]
+[2026-03-12 16:48:52,367: WARNING: save: Found untraced functions such as _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op, _jit_compiled_convolution_op while saving (showing 5 of 13). These functions will not be directly callable after loading.]
+[2026-03-12 16:48:53,101: INFO: builder_impl: Assets written to: C:\Users\pc\AppData\Local\Temp\tmp03aeqf7h\model\data\model\assets]
+[2026-03-12 16:50:56,452: WARNING: connectionpool: Retrying (Retry(total=4, connect=5, read=4, redirect=5, status=5)) after connection broken by 'ConnectionAbortedError(10053, 'An established connection was aborted by the software in your host machine')': /MunimAkbar/Kidney-Disease-Classification-Deep-Learning-Project.mlflow/api/2.0/mlflow-artifacts/artifacts/41101da750974ba38d4ec2aa559d155a/b6ec6f6097e945f28c87c4b002fac1fa/artifacts/model/data/model/variables/variables.data-00000-of-00001]
+[2026-03-12 16:53:23,007: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2026-03-12 17:25:55,331: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.5:8080]
+[2026-03-12 17:25:55,331: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-03-12 17:26:08,074: INFO: _internal: 127.0.0.1 - - [12/Mar/2026 17:26:08] "GET / HTTP/1.1" 200 -]
+[2026-03-12 17:26:36,798: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "D:\WorkANDProjects\Kidney-Disease-Classification-Deep-Learning-Project\env\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\WorkANDProjects\Kidney-Disease-Classification-Deep-Learning-Project\env\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\WorkANDProjects\Kidney-Disease-Classification-Deep-Learning-Project\env\lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "D:\WorkANDProjects\Kidney-Disease-Classification-Deep-Learning-Project\env\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\WorkANDProjects\Kidney-Disease-Classification-Deep-Learning-Project\env\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "D:\WorkANDProjects\Kidney-Disease-Classification-Deep-Learning-Project\env\lib\site-packages\flask_cors\decorator.py", line 121, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "D:\WorkANDProjects\Kidney-Disease-Classification-Deep-Learning-Project\app.py", line 46, in predictRoute
+    result = clApp.classifier.predict()
+  File "D:\WorkANDProjects\Kidney-Disease-Classification-Deep-Learning-Project\src\cnnClassifier\pipeline\prediction.py", line 16, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+  File "D:\WorkANDProjects\Kidney-Disease-Classification-Deep-Learning-Project\env\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "D:\WorkANDProjects\Kidney-Disease-Classification-Deep-Learning-Project\env\lib\site-packages\keras\saving\save.py", line 226, in load_model
+    raise IOError(
+OSError: No file or directory found at model\model.h5
+[2026-03-12 17:26:36,852: INFO: _internal: 127.0.0.1 - - [12/Mar/2026 17:26:36] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2026-03-12 17:27:31,016: INFO: _internal: 127.0.0.1 - - [12/Mar/2026 17:27:31] "GET / HTTP/1.1" 200 -]
+[2026-03-12 17:27:42,182: INFO: _internal: 127.0.0.1 - - [12/Mar/2026 17:27:42] "POST /predict HTTP/1.1" 200 -]
+[2026-03-12 17:34:12,121: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080]
+[2026-03-12 17:34:12,122: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-03-12 17:34:12,123: INFO: _internal:  * Restarting with stat]
+[2026-03-12 17:34:16,689: WARNING: _internal:  * Debugger is active!]
+[2026-03-12 17:34:16,694: INFO: _internal:  * Debugger PIN: 374-365-509]
+[2026-03-12 17:34:25,971: INFO: _internal: 127.0.0.1 - - [12/Mar/2026 17:34:25] "GET / HTTP/1.1" 200 -]
+[2026-03-12 17:34:26,186: INFO: _internal: 127.0.0.1 - - [12/Mar/2026 17:34:26] "GET /static/css/style.css HTTP/1.1" 200 -]
+[2026-03-12 17:34:26,196: INFO: _internal: 127.0.0.1 - - [12/Mar/2026 17:34:26] "GET /static/js/app.js HTTP/1.1" 200 -]
+[2026-03-12 17:34:27,002: INFO: _internal: 127.0.0.1 - - [12/Mar/2026 17:34:27] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
+[2026-03-12 17:35:26,556: INFO: _internal: 127.0.0.1 - - [12/Mar/2026 17:35:26] "GET / HTTP/1.1" 200 -]
+[2026-03-12 17:35:26,583: INFO: _internal: 127.0.0.1 - - [12/Mar/2026 17:35:26] "GET /static/css/style.css HTTP/1.1" 200 -]
+[2026-03-12 17:35:26,592: INFO: _internal: 127.0.0.1 - - [12/Mar/2026 17:35:26] "GET /static/js/app.js HTTP/1.1" 200 -]
+[2026-03-12 17:35:27,395: INFO: _internal: 127.0.0.1 - - [12/Mar/2026 17:35:27] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
+[2026-03-12 17:37:31,132: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080]
+[2026-03-12 17:37:31,132: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-03-12 17:37:31,132: INFO: _internal:  * Restarting with stat]
+[2026-03-12 17:37:35,213: INFO: _internal: 127.0.0.1 - - [12/Mar/2026 17:37:35] "GET / HTTP/1.1" 200 -]
+[2026-03-12 17:37:35,252: INFO: _internal: 127.0.0.1 - - [12/Mar/2026 17:37:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -]
+[2026-03-12 17:37:35,255: INFO: _internal: 127.0.0.1 - - [12/Mar/2026 17:37:35] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -]
+[2026-03-12 17:37:35,909: WARNING: _internal:  * Debugger is active!]
+[2026-03-12 17:37:35,913: INFO: _internal:  * Debugger PIN: 374-365-509]
+[2026-03-12 17:37:42,371: INFO: _internal: 127.0.0.1 - - [12/Mar/2026 17:37:42] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2026-03-12 17:37:48,841: INFO: _internal: 127.0.0.1 - - [12/Mar/2026 17:37:48] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2026-03-12 17:39:11,551: INFO: _internal:  * Detected change in 'D:\\WorkANDProjects\\Kidney-Disease-Classification-Deep-Learning-Project\\src\\cnnClassifier\\pipeline\\prediction.py', reloading]
+[2026-03-12 17:39:11,582: INFO: _internal:  * Detected change in 'D:\\WorkANDProjects\\Kidney-Disease-Classification-Deep-Learning-Project\\src\\cnnClassifier\\pipeline\\prediction.py', reloading]
+[2026-03-12 17:39:12,021: INFO: _internal:  * Restarting with stat]
+[2026-03-12 17:39:12,062: INFO: _internal:  * Restarting with stat]
+[2026-03-12 17:39:16,634: WARNING: _internal:  * Debugger is active!]
+[2026-03-12 17:39:16,635: WARNING: _internal:  * Debugger is active!]
+[2026-03-12 17:39:16,638: INFO: _internal:  * Debugger PIN: 374-365-509]
+[2026-03-12 17:39:16,638: INFO: _internal:  * Debugger PIN: 374-365-509]
+[2026-03-12 17:39:49,509: INFO: _internal: 127.0.0.1 - - [12/Mar/2026 17:39:49] "POST /predict HTTP/1.1" 200 -]
+[2026-03-12 17:40:37,332: INFO: _internal: 127.0.0.1 - - [12/Mar/2026 17:40:37] "POST /predict HTTP/1.1" 200 -]
+[2026-03-12 17:40:42,633: INFO: _internal: 127.0.0.1 - - [12/Mar/2026 17:40:42] "POST /predict HTTP/1.1" 200 -]
+[2026-03-12 17:40:48,928: INFO: _internal: 127.0.0.1 - - [12/Mar/2026 17:40:48] "GET / HTTP/1.1" 200 -]
+[2026-03-12 17:40:49,142: INFO: _internal: 127.0.0.1 - - [12/Mar/2026 17:40:49] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -]
+[2026-03-12 17:40:49,142: INFO: _internal: 127.0.0.1 - - [12/Mar/2026 17:40:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -]
+[2026-03-12 17:41:04,322: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080]
+[2026-03-12 17:41:04,322: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2026-03-12 17:41:04,324: INFO: _internal:  * Restarting with stat]
+[2026-03-12 17:41:07,735: INFO: _internal: 127.0.0.1 - - [12/Mar/2026 17:41:07] "GET / HTTP/1.1" 200 -]
+[2026-03-12 17:41:07,760: INFO: _internal: 127.0.0.1 - - [12/Mar/2026 17:41:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -]
+[2026-03-12 17:41:07,762: INFO: _internal: 127.0.0.1 - - [12/Mar/2026 17:41:07] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -]
+[2026-03-12 17:41:09,386: WARNING: _internal:  * Debugger is active!]
+[2026-03-12 17:41:09,390: INFO: _internal:  * Debugger PIN: 374-365-509]
+[2026-03-12 17:41:17,209: INFO: _internal: 127.0.0.1 - - [12/Mar/2026 17:41:17] "POST /predict HTTP/1.1" 200 -]
+[2026-03-12 17:41:48,793: WARNING: def_function: 5 out of the last 5 calls to <function Model.make_predict_function.<locals>.predict_function at 0x0000022DBB87B010> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2026-03-12 17:41:48,812: INFO: _internal: 127.0.0.1 - - [12/Mar/2026 17:41:48] "POST /predict HTTP/1.1" 200 -]
+[2026-03-12 17:41:58,110: WARNING: def_function: 6 out of the last 6 calls to <function Model.make_predict_function.<locals>.predict_function at 0x0000022E41E90040> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2026-03-12 17:41:58,135: INFO: _internal: 127.0.0.1 - - [12/Mar/2026 17:41:58] "POST /predict HTTP/1.1" 200 -]
+[2026-03-12 17:42:06,028: INFO: _internal: 127.0.0.1 - - [12/Mar/2026 17:42:06] "POST /predict HTTP/1.1" 200 -]
