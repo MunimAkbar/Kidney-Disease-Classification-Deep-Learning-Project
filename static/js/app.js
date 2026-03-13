@@ -137,14 +137,20 @@ function analyzeImage() {
 // ── Render results ──────────────────────────
 function renderResults(data) {
     const container = document.getElementById("results-content");
-    const prediction = data.prediction;   // "Tumor" or "Normal"
-    const confidence = data.confidence;   // e.g. 92.34
+    const prediction = data.prediction;   // "Tumor", "Normal", or "Invalid"
+    const confidence = data.confidence;   // e.g. 92.34 or 0 for Invalid
 
-    const isLowConfidence = confidence < CONFIDENCE_THRESHOLD;
+    const isInvalid = prediction === "Invalid";
+    const isLowConfidence = !isInvalid && confidence < CONFIDENCE_THRESHOLD;
 
     // Decide badge type
     let badgeClass, badgeIcon, badgeLabel, badgeSub;
-    if (isLowConfidence) {
+    if (isInvalid) {
+        badgeClass = "invalid";
+        badgeIcon = "🚫";
+        badgeLabel = "Invalid Input";
+        badgeSub = data.message || "This image does not appear to be a kidney CT scan.";
+    } else if (isLowConfidence) {
         badgeClass = "invalid";
         badgeIcon = "⚠️";
         badgeLabel = "Uncertain";
@@ -166,6 +172,26 @@ function renderResults(data) {
     if (confidence < 60) barClass = "low";
     else if (confidence < 80) barClass = "medium";
 
+    // Build details rows
+    let detailsHTML = `
+        <div class="detail-row">
+            <span class="label">Classification</span>
+            <span class="value">${isInvalid ? "Rejected" : prediction}</span>
+        </div>
+        <div class="detail-row">
+            <span class="label">Confidence Score</span>
+            <span class="value">${isInvalid ? "N/A" : confidence + "%"}</span>
+        </div>
+        <div class="detail-row">
+            <span class="label">Model</span>
+            <span class="value">VGG-16</span>
+        </div>
+        <div class="detail-row">
+            <span class="label">Image Quality</span>
+            <span class="value">${isInvalid ? "Not a CT Scan" : (isLowConfidence ? "Low / Invalid" : "Good")}</span>
+        </div>
+    `;
+
     container.innerHTML = `
         <div class="result-display">
             <!-- Badge -->
@@ -179,7 +205,7 @@ function renderResults(data) {
             <div class="confidence-section">
                 <div class="confidence-header">
                     <span>Confidence</span>
-                    <span class="conf-value">${confidence}%</span>
+                    <span class="conf-value">${isInvalid ? "—" : confidence + "%"}</span>
                 </div>
                 <div class="confidence-track">
                     <div class="confidence-fill ${barClass}" id="conf-bar"></div>
@@ -188,22 +214,7 @@ function renderResults(data) {
 
             <!-- Details -->
             <div class="result-details">
-                <div class="detail-row">
-                    <span class="label">Classification</span>
-                    <span class="value">${prediction}</span>
-                </div>
-                <div class="detail-row">
-                    <span class="label">Confidence Score</span>
-                    <span class="value">${confidence}%</span>
-                </div>
-                <div class="detail-row">
-                    <span class="label">Model</span>
-                    <span class="value">VGG-16</span>
-                </div>
-                <div class="detail-row">
-                    <span class="label">Image Quality</span>
-                    <span class="value">${isLowConfidence ? "Low / Invalid" : "Good"}</span>
-                </div>
+                ${detailsHTML}
             </div>
         </div>
     `;
@@ -211,7 +222,7 @@ function renderResults(data) {
     // Animate confidence bar after a tiny delay
     setTimeout(() => {
         const bar = document.getElementById("conf-bar");
-        if (bar) bar.style.width = confidence + "%";
+        if (bar) bar.style.width = (isInvalid ? 0 : confidence) + "%";
     }, 100);
 }
 
