@@ -1,79 +1,107 @@
-# Kidney-Disease-Classification-Deep-Learning-Project
-This repository contains my work on an amazing deep learning project 
+# Kidney Disease Classification using Deep Learning
 
-## Workflows
+![DeepVision AI Mockup](.assets/ui_mockup.png) *(Preview of the custom Prediction UI)*
 
-1. Update config.yaml
-2. Update secrets.yaml [Optional]
-3. Update params.yaml
-4. Update the entity
-5. Update the configuration manager in src config
-6. Update the components
-7. Update the pipeline 
-8. Update the main.py
-9. Update the dvc.yaml
-10. app.py
+## 🔬 Project Overview
+This project is an end-to-end Deep Learning application designed to classify kidney CT scans as either **Tumor** or **Normal**. Built with TensorFlow and Flask, the application features a robust MLOps pipeline (DVC, MLflow), a premium web frontend, and advanced Out-of-Distribution (OOD) detection.
 
-# How to run?
-### STEPS:
+### 🧠 Model Architecture & Methodology
+- **Base Model**: **VGG-16** (pre-trained on ImageNet)
+- **Transfer Learning**: We froze the base convolutional layers and added a custom dense head (`Flatten -> Dense(2, softmax)`) to adapt the model for binary medical image classification.
+- **Training Optimization**: 
+  - **Callbacks**: `ModelCheckpoint` to save the best model and `ReduceLROnPlateau` to finely tune the learning rate when validation loss stalls.
+  - **GPU Acceleration**: Configured natively for Windows using TensorFlow 2.10 and CUDA 11.2, achieving significantly faster training times over 50 epochs.
 
-Clone the repository
+### 🛡️ Advanced Feature: Out-of-Distribution (OOD) Detection
+A common issue with binary classifiers is that they forcefully categorize *any* uploaded image into one of the trained classes. 
+To solve this, we implemented **Feature-Space Distance OOD Detection**:
+1. During a one-time setup, the model extracts features from its penultimate layer (Flatten) across all training CT scans.
+2. It calculates a **mean feature vector** and an **OOD threshold** ($\mu + 3\sigma$).
+3. At inference, if a user uploads a non-medical image (e.g., a bicycle), the system calculates the cosine distance of the image's features against the mean vector.
+4. If the distance exceeds the threshold, the UI flags the image as **"Invalid Input"** instead of making a false prediction.
 
+### 💻 Premium User Interface
+The project includes a custom-built, glassmorphic UI replacing the default template:
+- **Responsive Design**: Clean layout built with raw CSS/JS (no heavy frontend frameworks).
+- **Interactive Uploads**: Supports drag-and-drop file ingestion and client-side image previews.
+- **Dynamic Results**: Displays color-coded badges (🔴 Tumor, 🟢 Normal, ⚠️ Invalid) and an animated confidence percentage bar.
+
+---
+
+## 🚀 Setup & Installation (GPU Optimized)
+
+To run this project locally with GPU support on Windows, follow these exact steps:
+
+### 1. Clone the repository
 ```bash
-https://github.com/MunimAkbar/Kidney-Disease-Classification-Deep-Learning-Project
+git clone https://github.com/MunimAkbar/Kidney-Disease-Classification-Deep-Learning-Project.git
+cd Kidney-Disease-Classification-Deep-Learning-Project
 ```
-### STEP 01- Create a conda environment for GPU Training
+
+### 2. Create the Conda Environment
+We use Python 3.10 to maintain compatibility with TensorFlow 2.10 (the last version to natively support GPU on Windows).
 ```bash
-# Create a new environment with Python 3.10
 conda create -p env python=3.10 -y
-
-# Activate the environment
 conda activate ./env
+```
 
-# Install CUDA Toolkit and cuDNN compatible with TF 2.10
+### 3. Install CUDA & cuDNN
+```bash
 conda install -c conda-forge cudatoolkit=11.2 cudnn=8.1.0 -y
 ```
 
-### STEP 02- install the requirements
+### 4. Install Dependencies
 ```bash
-# Install GPU-enabled TensorFlow
 pip install tensorflow-gpu==2.10.0
-
-# Install remaining dependencies
 pip install -r requirements.txt
 ```
 
-### STEP 03- Running Training
+*(Note: Memory growth is automatically configured in `main.py` and `app.py` to prevent TF from hogging your entire VRAM).*
+
+---
+
+## 🏃‍♂️ How to Run
+
+### Option A: Run the entire tracking & training pipeline
+This will orchestrate data ingestion, model building, and training through DVC.
 ```bash
-# Run the training pipeline
 python main.py
 ```
+*Alternatively, you can run `dvc repro` to execute only the changed stages.*
 
-### STEP 04- Running the Application
+### Option B: Generate OOD Reference (Required before running the app)
+If you have retrained the model, you **must** generate the feature references for the OOD detection to work.
 ```bash
-# Finally run the flask app
+python compute_features.py
+```
+*(This creates `model/feature_mean.npy` and `model/ood_threshold.npy`)*
+
+### Option C: Run the Web Application
+Start the Flask server to access the Prediction UI.
+```bash
 python app.py
 ```
+Open your browser and navigate to: **http://127.0.0.1:8080**
 
-Now,
+---
+
+## 📊 MLOps Integration
+
+### MLflow & DagsHub
+We use **MLflow** tracked via **DagsHub** for experiment logging (metrics, parameters, and models).
+To view the UI:
 ```bash
-open up you local host and port
+mlflow ui
 ```
 
-## MLflow
+### DVC (Data Version Control)
+The pipeline is tracked using DVC. The stages are defined in `dvc.yaml`:
+1. `data_ingestion`
+2. `prepare_base_model`
+3. `training`
+4. `evaluation`
 
-
-##### cmd
-- mlflow ui
-
-### dagshub
-[dagshub](https://dagshub.com/)
-
-
-Run this to export as env variables:
-
+To visualize the DAG:
 ```bash
-
-
+dvc dag
 ```
-
