@@ -9,11 +9,14 @@ import tensorflow as tf
 os.putenv('LANG', 'en_US.UTF-8')
 os.putenv('LC_ALL', 'en_US.UTF-8')
 
-# GPU memory growth to prevent VRAM hogging
+# GPU memory growth to prevent VRAM hogging (Fails gracefully on CPU-only deployments)
 gpus = tf.config.list_physical_devices('GPU')
 if gpus:
-    for gpu in gpus:
-        tf.config.experimental.set_memory_growth(gpu, True)
+    try:
+        for gpu in gpus:
+            tf.config.experimental.set_memory_growth(gpu, True)
+    except RuntimeError as e:
+        print(f"GPU memory growth error (expected on CPU deployments): {e}")
 
 app = Flask(__name__)
 CORS(app)
@@ -53,4 +56,6 @@ def predictRoute():
 
 
 if __name__ == "__main__":
-    app.run(host='127.0.0.1', port=8080, debug=True)
+    host = os.environ.get("FLASK_RUN_HOST", "127.0.0.1")
+    port = int(os.environ.get("FLASK_RUN_PORT", 8080))
+    app.run(host=host, port=port, debug=True)

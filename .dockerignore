@@ -1,0 +1,30 @@
+# Git and environment files
+.git/
+.gitignore
+env/
+.env
+
+# Cache and logs
+__pycache__/
+*.py[cod]
+*$py.class
+*.log
+logs/
+.pytest_cache/
+
+# DVC and MLflow
+.dvc/
+mlruns/
+*.sqlite
+
+# Data and large artifacts
+# We DO NOT upload the raw data to HF space to save storage.
+artifacts/data_ingestion/
+artifacts/prepare_base_model/
+artifacts/training/logs/
+
+# IDEs
+.vscode/
+.idea/
+
+# We KEEP model/ directory because it contains model.h5, feature_mean.npy, and ood_threshold.npy
