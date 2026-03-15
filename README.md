@@ -105,3 +105,20 @@ To visualize the DAG:
 ```bash
 dvc dag
 ```
+
+---
+
+## ☁️ Deployment (Hugging Face Spaces)
+
+This project is configured out-of-the-box for free CPU inference deployment on **Hugging Face Spaces** via **Docker**.
+
+We enforce a strict **hybrid workflow**:
+1. **Train** the model locally on your GPU (using `main.py`).
+2. **Deploy** only the Web UI and the lightweight inference model (`app.py` & `model.h5`) to the cloud.
+
+### Deployment Steps:
+1. Create a new Space on [Hugging Face](https://huggingface.co/spaces).
+2. Choose **Docker** as the Space SDK and select the **Blank** template.
+3. Upload this entire repository directly to the Hugging Face Space.
+
+*(Note: The provided `Dockerfile` automatically swaps the required GPU TensorFlow for the CPU version to run cleanly on HF's free tier, and uses a pre-configured `.dockerignore` to keep your upload size small by ignoring the heavy training data).*
