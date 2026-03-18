@@ -1,6 +1,6 @@
 # Kidney Disease Classification using Deep Learning
 
-![DeepVision AI Mockup](.assets/ui_mockup.png) *(Preview of the custom Prediction UI)*
+![UI Prediction 2 Screenshot](UI%20Screenshots/UI%20Prediction%202.png) *(Preview of the custom Prediction UI)*
 
 ## 🔬 Project Overview
 This project is an end-to-end Deep Learning application designed to classify kidney CT scans as either **Tumor** or **Normal**. Built with TensorFlow and Flask, the application features a robust MLOps pipeline (DVC, MLflow), a premium web frontend, and advanced Out-of-Distribution (OOD) detection.
@@ -83,10 +83,7 @@ python app.py
 ```
 Open your browser and navigate to: **http://127.0.0.1:8080**
 
-<<<<<<< HEAD
 ![UI Prediction Screenshot](UI%20Screenshots/UI%20Prediction%201.png) *(Prediction UI Result)*
-=======
->>>>>>> df1bec79fbc65aeebf1bbae8d6343d0b8c7a3309
 ---
 
 ## 📊 MLOps Integration
