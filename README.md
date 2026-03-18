@@ -83,7 +83,10 @@ python app.py
 ```
 Open your browser and navigate to: **http://127.0.0.1:8080**
 
+<<<<<<< HEAD
 ![UI Prediction Screenshot](UI%20Screenshots/UI%20Prediction%201.png) *(Prediction UI Result)*
+=======
+>>>>>>> df1bec79fbc65aeebf1bbae8d6343d0b8c7a3309
 ---
 
 ## 📊 MLOps Integration
