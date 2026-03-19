@@ -1,3 +1,13 @@
+---
+title: Kidney Disease Classifier
+emoji: 🏥
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+app_file: app.py
+pinned: false
+---
+
 # Kidney Disease Classification using Deep Learning
 
 ![UI Prediction 2 Screenshot](UI%20Screenshots/UI%20Prediction%202.png) *(Preview of the custom Prediction UI)*
