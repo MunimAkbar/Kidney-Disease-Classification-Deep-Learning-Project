@@ -8,9 +8,18 @@ app_file: app.py
 pinned: false
 ---
 
-# Kidney Disease Classification using Deep Learning
+# 🏥 Kidney Disease Classification using Deep Learning
 
-![UI Prediction 2 Screenshot](UI%20Screenshots/UI%20Prediction%202.png) *(Preview of the custom Prediction UI)*
+[![Hugging Face Space](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Space-blue)](https://huggingface.co/spaces/munimakbar/Kidney-Disease-Classifier)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+> [!TIP]
+> ### [🔗 View Live Demo on Hugging Face Spaces](https://huggingface.co/spaces/munimakbar/Kidney-Disease-Classifier)
+
+## 📺 App Preview
+| Landing Page | Prediction Result |
+| :---: | :---: |
+| ![UI Preview 1](UI%20Screenshots/UI%20Prediction%202.png) | ![UI Preview 2](UI%20Screenshots/UI%20Prediction%201.png) |
 
 ## 🔬 Project Overview
 This project is an end-to-end Deep Learning application designed to classify kidney CT scans as either **Tumor** or **Normal**. Built with TensorFlow and Flask, the application features a robust MLOps pipeline (DVC, MLflow), a premium web frontend, and advanced Out-of-Distribution (OOD) detection.
@@ -119,17 +128,27 @@ dvc dag
 
 ---
 
-## ☁️ Deployment (Hugging Face Spaces)
+## 🌐 Deployment (Cloud & Local)
 
-This project is configured out-of-the-box for free CPU inference deployment on **Hugging Face Spaces** via **Docker**.
+### 🏥 Option 1: Cloud Deployment (Hugging Face Spaces)
+The application is pre-configured for free inference on Hugging Face using Docker.
 
-We enforce a strict **hybrid workflow**:
-1. **Train** the model locally on your GPU (using `main.py`).
-2. **Deploy** only the Web UI and the lightweight inference model (`app.py` & `model.h5`) to the cloud.
+1. **Create a Space**: On [Hugging Face](https://huggingface.co/spaces), create a new Space.
+2. **SDK Choice**: Select **Docker** as the Space SDK and choose the **Blank** template.
+3. **Push to Sync**: 
+   - Connect your GitHub repository to the Space for automatic deployment.
+   - Or push directly to the Hugging Face remote: `git push hf main`.
 
-### Deployment Steps:
-1. Create a new Space on [Hugging Face](https://huggingface.co/spaces).
-2. Choose **Docker** as the Space SDK and select the **Blank** template.
-3. Upload this entire repository directly to the Hugging Face Space.
+> [!NOTE]
+> The provided `Dockerfile` is optimized to swap GPU-heavy dependencies for CPU-only versions during cloud deployment to ensure compatibility with the Hugging Face free tier.
 
-*(Note: The provided `Dockerfile` automatically swaps the required GPU TensorFlow for the CPU version to run cleanly on HF's free tier, and uses a pre-configured `.dockerignore` to keep your upload size small by ignoring the heavy training data).*
+### 💻 Option 2: Local Deployment (Docker)
+If you have Docker installed locally, you can run the exact same environment as the cloud:
+```bash
+docker build -t kidney-classifier .
+docker run -p 8080:8080 kidney-classifier
+```
+Access via: `http://localhost:8080`
+
+### 🔧 Option 3: Standard Local Run (Direct)
+Refer to the **"Setup & Installation"** section above for GPU-optimized local development.
