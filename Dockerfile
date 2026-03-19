@@ -14,20 +14,18 @@ USER root
 RUN apt-get update && apt-get install -y --no-install-recommends \
     gcc \
     python3-dev \
+    libmagic1 \
     && rm -rf /var/lib/apt/lists/*
 USER user
 
-# Copy requirements first to leverage Docker cache
-COPY --chown=user:user requirements.txt .
+# Copy the entire project (must happen before pip install because of -e .)
+COPY --chown=user:user . .
 
 # Install dependencies (ignoring the GPU version of TF for deployment)
 # We use standard tensorflow for CPU inference on HF Spaces
 RUN pip install --no-cache-dir --upgrade pip && \
     sed -i 's/tensorflow-gpu==2.10.0/tensorflow==2.10.0/' requirements.txt && \
     pip install --no-cache-dir -r requirements.txt
-
-# Copy the entire project
-COPY --chown=user:user . .
 
 # Expose port 7860 (Hugging Face Spaces default)
 EXPOSE 7860
